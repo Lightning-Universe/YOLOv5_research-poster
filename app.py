@@ -136,20 +136,16 @@ class ResearchApp(L.LightningFlow):
 
 if __name__ == "__main__":
     poster_dir = "resources"
-    paper = "https://arxiv.org/pdf/2103.00020"
-    blog = "https://openai.com/blog/clip/"
+    blog = "https://ultralytics.com/yolov5"
     github = "https://github.com/openai/CLIP"
-    wandb = "https://wandb.ai/cceyda/flax-clip/runs/wlad2c2p?workspace=user-aniketmaurya"
-    tabs = ["Blog", "Paper", "Poster", "Notebook Viewer", "Training Logs", "Model Demo"]
+    tabs = ["Blog", "Poster", "Notebook Viewer", "Model Demo"]
 
     app = L.LightningApp(
         ResearchApp(
             poster_dir=poster_dir,
-            paper=paper,
             blog=blog,
-            training_log_url=wandb,
             github=github,
-            notebook_path="resources/Interacting_with_CLIP.ipynb",
+            # notebook_path="resources/Interacting_with_CLIP.ipynb",
             launch_jupyter_lab=False,  # don't launch for public app, can expose to security vulnerability
             launch_gradio=True,
             tab_order=tabs,
