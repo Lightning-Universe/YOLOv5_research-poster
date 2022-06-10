@@ -1,8 +1,8 @@
-# ⚡️ Lightning Research Poster Template 🔬
+# ⚡️ Object Detection with YoloV5 🔬
 
-Use this app to share your research paper results. This app lets you connect a blogpost, arxiv paper, and a jupyter
-notebook and even have an interactive demo for people to play with the model. This app also allows industry
-practitioners to reproduce your work.
+This app is a poster for YoloV5 showcasing model demo, blogpost, and notebooks. You can use this to extend or customize
+for industry use case or your own research. This app is generated
+from [research-poster-template-app](https://github.com/PyTorchLightning/lightning-template-research-app)
 
 ## Getting started
 
@@ -14,7 +14,7 @@ manually install the app as mentioned below.
 
 #### With Lightning CLI
 
-`lightning install app lightning/research_poster`
+`lightning install app lightning/object-detector`
 
 #### Use GitHub template
 
@@ -23,18 +23,9 @@ your account.
 
 > ![use-template.png](./assets/use-template.png)
 
-You can clone the forked app repo and follow the steps below to install the app.
-
-```
-git clone https://github.com/YOUR-USERNAME/lightning-template-research-app.git
-cd lightning-template-research-app
-pip install -r requirements.txt
-pip install -e .
-```
-
-Once you have installed the app, you can goto the `lightning-template-research-app` folder and
+Once you have installed the app, you can goto the `research-poster-yolov5` folder and
 run `lightning run app app.py --cloud` from terminal.
-This will launch the template app in your default browser with tabs containing research paper, blog, Training
+This will launch the template app in your default browser with tabs containing blog, notebook, Training
 logs, and Model Demo.
 
 You should see something like this in your browser:
