@@ -78,7 +78,6 @@ app = L.LightningApp(
         training_log_url=wandb,
         github=github,
         notebook_path="resources/Interacting_with_CLIP.ipynb",
-        launch_jupyter_lab=True,
         launch_gradio=True,
         tab_order=tabs,
     )
