@@ -12,8 +12,7 @@ logging.basicConfig(level="NOTSET", format=FORMAT, datefmt="[%X]", handlers=[Ric
 logger = logging.getLogger(__name__)
 
 
-# credits to Ahsen Khaliq (@akhaliq) for building amazing demo with YoloV5
-# here is the original work - https://huggingface.co/spaces/pytorch/YOLOv5/blob/main/app.py
+# This code is adapted from Ultralytics docs - https://docs.ultralytics.com/tutorials/pytorch-hub/
 class ModelDemo(ServeGradio):
     """Serve model with Gradio UI.
 
@@ -21,31 +20,23 @@ class ModelDemo(ServeGradio):
     automatically launch the Gradio interface.
     """
 
-    inputs = gr.inputs.Image(type='pil', label="Original Image")
+    inputs = gr.inputs.Image(type="pil", label="Upload Image for Object Detection")
     outputs = gr.outputs.Image(type="pil", label="Output Image")
+    examples = [["zidane.jpg"], [["bus.jpg"]]]
+    enable_queue = True
 
     def __init__(self):
-        super(ServeGradio, self).__init__(parallel=True)
-        self._model = None
-        self.enable_queue = True
+        super().__init__(parallel=True)
 
     def build_model(self):
-        # Images
-        torch.hub.download_url_to_file('https://github.com/ultralytics/yolov5/raw/master/data/images/zidane.jpg',
-            'zidane.jpg')
-        torch.hub.download_url_to_file('https://github.com/ultralytics/yolov5/raw/master/data/images/bus.jpg',
-            'bus.jpg')
-
-        # Model
-        model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # force_reload=True to update
+        for f in ["zidane.jpg", "bus.jpg"]:
+            torch.hub.download_url_to_file("https://ultralytics.com/images/" + f, f)
+        model = torch.hub.load("ultralytics/yolov5", "yolov5s")
         return model
 
-    def yolo(self, im, size=640):
-        g = (size / max(im.size))  # gain
-        im = im.resize((int(x * g) for x in im.size), Image.ANTIALIAS)  # resize
-
-        results = self.model(im)  # inference
-        results.render()  # updates results.imgs with boxes and labels
+    def yolo(self, image):
+        results = self.model(image, size=640)  # includes NMS
+        results.render()
         return Image.fromarray(results.imgs[0])
 
     def predict(self, image) -> str:

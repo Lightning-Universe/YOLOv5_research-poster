@@ -1,6 +1,6 @@
 <div style="height: 90pt;"></div>
 <div style="flex: 0 0 16%; margin-top: -10pt;">
-<img src="https://cdn.iconscout.com/icon/free/png-256/openai-1524384-1290687.png" width="100px">
+<img src="https://avatars.githubusercontent.com/u/26833451?s=200&v=4" width="100px">
 </div>
 <div style="flex: 0 0 65%; text-align: center;">
 <h1 style="margin-bottom: 10pt;">Demo: YoloV5</h1>
@@ -9,11 +9,11 @@
 <div style="flex: 1">
     <div style="display: flex; align-items: center;">
         <img style="height: 20pt; width: 20pt; margin: 5pt;" src="icons/fontawesome/brands/github.svg">
-        <div style="font-size: 0.9rem; margin-right: 5pt;"><a href="https://github.com/openai/">OpenAI</a></div>
+        <div style="font-size: 0.9rem; margin-right: 5pt;"><a href="https://github.com/ultralytics/">Ultralytics</a></div>
     </div>
     <div style="display: flex; align-items: center;">
         <img style="height: 20pt; width: 20pt; margin: 5pt;" src="icons/fontawesome/brands/twitter.svg">
-        <div style="font-size: 0.9rem;"><a href="https://twitter.com/OpenAI">@OpenAI</a></div>
+        <div style="font-size: 0.9rem;"><a href="https://twitter.com/ultralytics">@ultralytics</a></div>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
 
 # YoloV5
 
-## YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite
+## YOLOv5 in PyTorch > ONNX > CoreML > TFLite
 
 This app is a demo of YoloV5
 using [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app) which
@@ -64,24 +64,23 @@ graph LR
 ```python
 import lightning as L
 
-paper = "https://arxiv.org/pdf/2103.00020.pdf"
-blog = "https://openai.com/blog/clip/"
-github = "https://github.com/mlfoundations/open_clip"
-wandb = "https://wandb.ai/aniketmaurya/herbarium-2022/runs/2dvwrme5"
-tabs = ["Poster", "Blog", "Paper", "Notebook", "Training Logs", "Model Demo"]
+poster_dir = "resources"
+blog = "https://ultralytics.com/yolov5"
+github = "https://github.com/openai/CLIP"
+tabs = ["Blog", "Poster", "Notebook Viewer", "Model Demo"]
 
 app = L.LightningApp(
     ResearchApp(
-        resource_path="resources",
-        paper=paper,
+        poster_dir=poster_dir,
         blog=blog,
-        training_log_url=wandb,
         github=github,
-        notebook_path="resources/Interacting_with_CLIP.ipynb",
+        # notebook_path="resources/Interacting_with_CLIP.ipynb",
+        launch_jupyter_lab=False,  # don't launch for public app, can expose to security vulnerability
         launch_gradio=True,
         tab_order=tabs,
     )
 )
+
 ```
 
 ### Citation
