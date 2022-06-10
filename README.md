@@ -1,8 +1,10 @@
 # ⚡️ Object Detection with YoloV5 🔬
 
-This app is a poster for YoloV5 showcasing model demo, blogpost, and notebooks. You can use this to extend or customize
-for industry use case or your own research. This app is generated
-from [research-poster-template-app](https://github.com/PyTorchLightning/lightning-template-research-app)
+This app is a research poster demo of YoloV5 Object Detection model by Ultralytics. It showcases a notebook, a blog, and
+a model demo where you can upload photos to get a bounding box visualized output image.
+
+To create a research poster for your work please
+use [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app).
 
 ## Getting started
 

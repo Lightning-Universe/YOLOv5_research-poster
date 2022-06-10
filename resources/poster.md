@@ -23,14 +23,16 @@
 
 ## YOLOv5 in PyTorch > ONNX > CoreML > TFLite
 
-This app is a demo of YoloV5
-using [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app) which
-allows authors to build an app to share their everything related to their work at a single place.
-Explore the tabs at the top of this app to view blog, paper, training logs and model demo.
+This app is a research poster demo of YoloV5 Object Detection model by Ultralytics. It showcases a notebook, a blog, and
+a model demo where you can upload photos to get a bounding box visualized output image.
 
+> Thanks to [Ultralytics](https://github.com/ultralytics/yolov5) for open-sourcing this fantastic library.
+
+
+To create a research poster for your work please
+use [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app).
 You can fork this app and edit to customize according to your need.
 
-Thanks to [Ultralytics](https://github.com/ultralytics/yolov5) for open-sourcing this fantastic library.
 
 <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg">
 
