@@ -1,8 +1,10 @@
 import logging
+from typing import List
 
 import gradio as gr
 import torch
 from PIL import Image
+from lightning import BuildConfig
 from lightning.components.serve import ServeGradio
 from rich.logging import RichHandler
 
@@ -10,6 +12,15 @@ FORMAT = "%(message)s"
 logging.basicConfig(level="NOTSET", format=FORMAT, datefmt="[%X]", handlers=[RichHandler()])
 
 logger = logging.getLogger(__name__)
+
+
+class ModelBuildConfig(BuildConfig):
+    def build_commands(self) -> List[str]:
+        return [
+            "pip uninstall -y opencv-python",
+            "pip uninstall -y opencv-python-headless",
+            "pip install opencv-python-headless==4.5.5.64",
+        ]
 
 
 # This code is adapted from Ultralytics docs - https://docs.ultralytics.com/tutorials/pytorch-hub/
@@ -26,7 +37,7 @@ class ModelDemo(ServeGradio):
     enable_queue = True
 
     def __init__(self):
-        super().__init__(parallel=True)
+        super().__init__(parallel=True, cloud_build_config=ModelBuildConfig())
 
     def build_model(self):
         for f in ["zidane.jpg", "bus.jpg"]:
