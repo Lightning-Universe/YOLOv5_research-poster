@@ -14,3 +14,16 @@ jupyterlite==0.1.0b7
 lightning
 jupyterlab==3.3.3
 opencv-python==4.5.5.64
+
+# YOLOv5 requirements
+# Base ----------------------------------------
+matplotlib>=3.2.2
+numpy>=1.18.5
+Pillow>=7.1.2
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1  # Google Colab version
+tqdm>=4.41.0
+# Plotting ------------------------------------
+pandas>=1.1.4
+seaborn>=0.11.0
