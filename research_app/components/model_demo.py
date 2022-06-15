@@ -5,7 +5,7 @@ import gradio as gr
 import torch
 from PIL import Image
 from lightning import BuildConfig
-from lightning.components.serve import ServeGradio
+from lightning.app.components.serve import ServeGradio
 from rich.logging import RichHandler
 
 FORMAT = "%(message)s"
