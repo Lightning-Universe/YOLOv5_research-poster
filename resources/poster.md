@@ -30,7 +30,7 @@ a model demo where you can upload photos to get a bounding box visualized output
 
 
 To create a research poster for your work please
-use [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app).
+use [Lightning Research Template app](https://github.com/Lightning-AI/lightning-template-research-app).
 You can fork this app and edit to customize according to your need.
 
 
@@ -61,28 +61,32 @@ graph LR
     B -->|User auth| E[Lightning Work 3]
 ```
 
-### Available at : `PyTorchLightning/lightning-template-research-app/app.py`
+### Available at : `Lightning-AI/lightning-template-research-app/app.py`
 
 ```python
 import lightning as L
 
 poster_dir = "resources"
 blog = "https://ultralytics.com/yolov5"
-github = "https://github.com/openai/CLIP"
-tabs = ["Blog", "Poster", "Notebook Viewer", "Model Demo"]
+github = "https://github.com/ultralytics/yolov5"
+training_logs = (
+    "https://wandb.ai/glenn-jocher/yolov5_tutorial/reports/"
+    "YOLOv5-COCO128-Tutorial-Results--VmlldzozMDI5OTY?galleryTag=intermediate"
+)
+tabs = ["Notebook Viewer", "Poster", "training logs", "Blog", "Model Demo"]
 
 app = L.LightningApp(
     ResearchApp(
         poster_dir=poster_dir,
         blog=blog,
         github=github,
-        # notebook_path="resources/Interacting_with_CLIP.ipynb",
-        launch_jupyter_lab=False,  # don't launch for public app, can expose to security vulnerability
+        notebook_path="resources/demo.ipynb",
+        training_log_url=training_logs,
         launch_gradio=True,
         tab_order=tabs,
+        launch_jupyter_lab=False,  # don't launch for public app, can expose to security vulnerability
     )
 )
-
 ```
 
 ### Citation
