@@ -4,7 +4,7 @@ This app is a research poster demo of YoloV5 Object Detection model by Ultralyti
 a model demo where you can upload photos to get a bounding box visualized output image.
 
 To create a research poster for your work please
-use [Lightning Research Template app](https://github.com/PyTorchLightning/lightning-template-research-app).
+use [Lightning Research Template app](https://github.com/Lightning-AI/lightning-template-research-app).
 
 ## Getting started
 
