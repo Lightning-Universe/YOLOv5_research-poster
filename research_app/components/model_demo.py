@@ -3,9 +3,9 @@ from typing import List
 
 import gradio as gr
 import torch
-from PIL import Image
 from lightning import BuildConfig
 from lightning.app.components.serve import ServeGradio
+from PIL import Image
 from rich.logging import RichHandler
 
 FORMAT = "%(message)s"
