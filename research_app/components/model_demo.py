@@ -6,10 +6,9 @@ import torch
 from PIL import Image
 from lightning import BuildConfig
 from lightning.app.components.serve import ServeGradio
-from rich.logging import RichHandler
 
 FORMAT = "%(message)s"
-logging.basicConfig(level="NOTSET", format=FORMAT, datefmt="[%X]", handlers=[RichHandler()])
+logging.basicConfig(level=logging.INFO, format=FORMAT, datefmt="[%X]")
 
 logger = logging.getLogger(__name__)
 
