@@ -32,7 +32,7 @@ class ModelDemo(ServeGradio):
 
     inputs = gr.inputs.Image(type="pil", label="Upload Image for Object Detection")
     outputs = gr.outputs.Image(type="pil", label="Output Image")
-    examples = [["zidane.jpg"], [["bus.jpg"]]]
+    # examples = [["zidane.jpg"], [["bus.jpg"]]]
     enable_queue = True
 
     def __init__(self):
@@ -46,8 +46,7 @@ class ModelDemo(ServeGradio):
 
     def yolo(self, image):
         results = self.model(image, size=640)  # includes NMS
-        results.render()
-        return Image.fromarray(results.imgs[0])
+        return Image.fromarray(results.render()[0])
 
     def predict(self, image) -> str:
         return self.yolo(image)
