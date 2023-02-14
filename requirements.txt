@@ -9,7 +9,7 @@ nbconvert==6.5.0
 jupyterlite==0.1.0b7
 lightning==1.8.*
 jupyterlab==3.3.3
-opencv-python==4.5.5.64
+opencv-python==4.7.0.68
 
 # YOLOv5 requirements
 # Base ----------------------------------------
