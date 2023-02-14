@@ -28,11 +28,9 @@ a model demo where you can upload photos to get a bounding box visualized output
 
 > Thanks to [Ultralytics](https://github.com/ultralytics/yolov5) for open-sourcing this fantastic library.
 
-
 To create a research poster for your work please
 use [Lightning Research Template app](https://github.com/Lightning-AI/lightning-template-research-app).
 You can fork this app and edit to customize according to your need.
-
 
 <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg">
 
@@ -48,9 +46,11 @@ over thousands of hours of research and development.
 
 !!! abstract "Key Features"
 
-    - **Easy to use-** Lightning apps follow the Lightning philosophy- easy to read, modular, intuitive, pythonic and highly composable interface that allows you to focus on what's important for you, and automate the rest.
-    - **Easy to scale**- Lightning provides a common experience locally and in the cloud. The Lightning.ai cloud platform abstracts the infrastructure, so you can run your apps at any scale. The modular and composable framework allows for simpler testing and debugging.
-    - **Leverage the power of the community-** Lightning.ai offers a variety of apps for any use case you can use as is or build upon. By following the best MLOps practices provided through the apps and documentation you can deploy state-of-the-art ML applications in days, not months.
+```
+- **Easy to use-** Lightning apps follow the Lightning philosophy- easy to read, modular, intuitive, pythonic and highly composable interface that allows you to focus on what's important for you, and automate the rest.
+- **Easy to scale**- Lightning provides a common experience locally and in the cloud. The Lightning.ai cloud platform abstracts the infrastructure, so you can run your apps at any scale. The modular and composable framework allows for simpler testing and debugging.
+- **Leverage the power of the community-** Lightning.ai offers a variety of apps for any use case you can use as is or build upon. By following the best MLOps practices provided through the apps and documentation you can deploy state-of-the-art ML applications in days, not months.
+```
 
 ```mermaid
 graph LR
