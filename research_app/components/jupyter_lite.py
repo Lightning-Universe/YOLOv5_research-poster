@@ -33,7 +33,6 @@ class JupyterLite(LightningWork):
 
 if __name__ == "__main__":
 
-
     class Demo(LightningFlow):
         def __init__(self) -> None:
             super().__init__()
