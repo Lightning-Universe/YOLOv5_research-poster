@@ -3,8 +3,8 @@ from typing import List
 
 import gradio as gr
 import torch
-from PIL import Image
 from lightning import BuildConfig
+from PIL import Image
 from lightning.app.components.serve import ServeGradio
 
 FORMAT = "%(message)s"
