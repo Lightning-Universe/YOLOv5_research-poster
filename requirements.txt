@@ -1,6 +1,7 @@
 research-app @ https://github.com/Lightning-Universe/Research-poster/archive/refs/heads/main.zip
 
 # YOLOv5 requirements
+
 # Base ----------------------------------------
 matplotlib>=3.2.2
 numpy>=1.18.5
@@ -9,6 +10,7 @@ PyYAML>=5.3.1
 requests>=2.23.0
 scipy>=1.4.1  # Google Colab version
 tqdm>=4.41.0
+
 # Plotting ------------------------------------
 pandas>=1.1.4
 seaborn>=0.11.0
