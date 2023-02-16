@@ -7,7 +7,7 @@ from lightning.app import frontend
 from poster import Poster
 
 from research_app.components.jupyter_notebook import JupyterLab
-from research_app.components.model_demo import ModelDemo
+from research_app.demo.model import ModelDemo
 from research_app.utils import clone_repo, notebook_to_html
 
 FORMAT = "%(message)s"
@@ -132,24 +132,19 @@ class ResearchApp(L.LightningFlow):
 
 
 if __name__ == "__main__":
-    poster_dir = "resources"
-    blog = "https://ultralytics.com/yolov5"
-    github = "https://github.com/ultralytics/yolov5"
-    training_logs = (
-        "https://wandb.ai/glenn-jocher/yolov5_tutorial/reports/"
-        "YOLOv5-COCO128-Tutorial-Results--VmlldzozMDI5OTY?galleryTag=intermediate"
-    )
-    tabs = ["Notebook Viewer", "Poster", "training logs", "Blog", "Model Demo"]
 
     app = L.LightningApp(
         ResearchApp(
-            poster_dir=poster_dir,
-            blog=blog,
-            github=github,
+            poster_dir="resources",
+            blog="https://ultralytics.com/yolov5",
+            github="https://github.com/ultralytics/yolov5",
             notebook_path="resources/demo.ipynb",
-            training_log_url=training_logs,
+            training_log_url=(
+                "https://wandb.ai/glenn-jocher/yolov5_tutorial/reports/"
+                "YOLOv5-COCO128-Tutorial-Results--VmlldzozMDI5OTY?galleryTag=intermediate"
+            ),
             launch_gradio=True,
-            tab_order=tabs,
+            tab_order=["Notebook Viewer", "Poster", "training logs", "Blog", "Model Demo"],
             launch_jupyter_lab=False,  # don't launch for public app, can expose to security vulnerability
         )
     )
