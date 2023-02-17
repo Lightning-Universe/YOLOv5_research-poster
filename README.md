@@ -27,23 +27,24 @@ manually install the app as mentioned below.
 # update app.py at the root of the repo
 import lightning as L
 
-paper = "https://arxiv.org/pdf/2103.00020.pdf"
-blog = "https://openai.com/blog/clip/"
-github = "https://github.com/mlfoundations/open_clip"
-wandb = "https://wandb.ai/aniketmaurya/herbarium-2022/runs/2dvwrme5"
-tabs = ["Poster", "Blog", "Paper", "Notebook", "Training Logs", "Model Demo"]
-
 app = L.LightningApp(
     ResearchApp(
         poster_dir="resources",
-        paper=paper,
-        blog=blog,
-        training_log_url=wandb,
-        github=github,
+        paper="https://arxiv.org/pdf/2103.00020.pdf",
+        blog="https://openai.com/blog/clip/",
+        training_log_url="https://wandb.ai/aniketmaurya/herbarium-2022/runs/2dvwrme5",
+        github="https://github.com/mlfoundations/open_clip",
         notebook_path="resources/Interacting_with_CLIP.ipynb",
         launch_jupyter_lab=False,
         launch_gradio=True,
-        tab_order=tabs,
+        tab_order=[
+            "Poster",
+            "Blog",
+            "Paper",
+            "Notebook",
+            "Training Logs",
+            "Model Demo",
+        ],
     )
 )
 ```
